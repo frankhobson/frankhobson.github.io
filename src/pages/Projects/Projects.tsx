@@ -94,6 +94,7 @@ export const Projects: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={styles.primaryLink}
+                    aria-label={`Launch ${project.title} live`}
                   >
                     Launch Live <Icons.ExternalLink size={14} className={styles.linkIcon} />
                   </a>
@@ -104,6 +105,7 @@ export const Projects: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={styles.secondaryLink}
+                    aria-label={`View ${project.title} source code on GitHub`}
                   >
                     Source Code <Icons.Code size={14} className={styles.linkIcon} />
                   </a>

@@ -50,6 +50,9 @@ export const Layout: React.FC = () => {
 
   return (
     <div className={styles.wrapper}>
+      <a href="#main-content" className="skip-to-content">
+        Skip to main content
+      </a>
       {/* Navigation Header */}
       <header
         className={`${styles.header} ${scrolled ? styles.scrolled : ""} ${location.pathname === "/" ? styles.homeHeader : ""}`}
@@ -163,7 +166,7 @@ export const Layout: React.FC = () => {
       </div>
 
       {/* Main Content Area */}
-      <main className={styles.mainContent}>
+      <main id="main-content" className={styles.mainContent}>
         <Outlet />
       </main>
 

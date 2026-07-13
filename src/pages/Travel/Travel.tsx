@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   ComposableMap,
   Geographies,
@@ -207,13 +207,34 @@ export const Travel: React.FC = () => {
   const [hoveredStateCode, setHoveredStateCode] = useState<string | null>(null);
   const [mapLoading, setMapLoading] = useState(true);
   const [carouselIndex, setCarouselIndex] = useState(0);
+  const modalRef = useRef<HTMLDivElement>(null);
+  const lastActiveElement = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     setCarouselIndex(0);
   }, [selectedLocation]);
 
   useEffect(() => {
-    if (!selectedLocation) return;
+    if (!selectedLocation) {
+      if (lastActiveElement.current) {
+        lastActiveElement.current.focus();
+      }
+      return;
+    }
+
+    lastActiveElement.current = document.activeElement as HTMLElement;
+
+    // Focus the close button once the modal is active
+    setTimeout(() => {
+      if (modalRef.current) {
+        const closeBtn = modalRef.current.querySelector("button") as HTMLElement;
+        if (closeBtn) {
+          closeBtn.focus();
+        } else {
+          modalRef.current.focus();
+        }
+      }
+    }, 50);
 
     const primaryImage = selectedLocation.image;
     const additionalImages = selectedLocation.images || [];
@@ -232,6 +253,26 @@ export const Travel: React.FC = () => {
       } else if (e.key === "ArrowRight") {
         if (images.length > 1) {
           setCarouselIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+        }
+      } else if (e.key === "Tab" && modalRef.current) {
+        const focusableElements = modalRef.current.querySelectorAll(
+          'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        );
+        if (focusableElements.length > 0) {
+          const firstElement = focusableElements[0] as HTMLElement;
+          const lastElement = focusableElements[focusableElements.length - 1] as HTMLElement;
+
+          if (e.shiftKey) {
+            if (document.activeElement === firstElement) {
+              e.preventDefault();
+              lastElement.focus();
+            }
+          } else {
+            if (document.activeElement === lastElement) {
+              e.preventDefault();
+              firstElement.focus();
+            }
+          }
         }
       }
     };
@@ -442,6 +483,13 @@ export const Travel: React.FC = () => {
                             <Geography
                               key={geoRwd || hcKey || `state-${idx}`}
                               geography={geo}
+                              tabIndex={isVisited ? 0 : -1}
+                              role={isVisited ? "button" : undefined}
+                              aria-label={
+                                isVisited
+                                  ? `${getSubdivisionName(hcKey, name)} (Visited). Press Enter to view travel details.`
+                                  : getSubdivisionName(hcKey, name)
+                              }
                               onMouseEnter={() => {
                                 const resolvedName = getSubdivisionName(
                                   hcKey,
@@ -458,6 +506,12 @@ export const Travel: React.FC = () => {
                                 setHoveredStateCode(null);
                               }}
                               onClick={() => handleStateClick(geo)}
+                              onKeyDown={(e) => {
+                                if (isVisited && (e.key === "Enter" || e.key === " ")) {
+                                  e.preventDefault();
+                                  handleStateClick(geo);
+                                }
+                              }}
                               style={{
                                 default: {
                                   fill: isGroupHovered
@@ -484,6 +538,12 @@ export const Travel: React.FC = () => {
                                   fill: "#1C1B1A",
                                   outline: "none",
                                 },
+                                focused: {
+                                  fill: isVisited ? "#1C1B1A" : "#e3dfd5",
+                                  stroke: "var(--accent-color, #7D7565)",
+                                  strokeWidth: 1.5,
+                                  outline: "none",
+                                }
                               }}
                             />
                           );
@@ -501,6 +561,15 @@ export const Travel: React.FC = () => {
                             <Geography
                               key={geoRwd || isoA3 || `world-${idx}`}
                               geography={geo}
+                              tabIndex={isVisited ? 0 : -1}
+                              role={isVisited ? "button" : undefined}
+                              aria-label={
+                                isVisited
+                                  ? isSpecial
+                                    ? `${name} (Interactive regions). Press Enter to explore states.`
+                                    : `${name} (Visited). Press Enter to view travel details.`
+                                  : name
+                              }
                               onMouseEnter={() => {
                                 let label = name;
                                 if (isSpecial) {
@@ -516,6 +585,12 @@ export const Travel: React.FC = () => {
                               onClick={() =>
                                 isVisited && handleCountryClick(geo)
                               }
+                              onKeyDown={(e) => {
+                                if (isVisited && (e.key === "Enter" || e.key === " ")) {
+                                  e.preventDefault();
+                                  handleCountryClick(geo);
+                                }
+                              }}
                               style={{
                                 default: {
                                   fill: isVisited
@@ -544,6 +619,16 @@ export const Travel: React.FC = () => {
                                   fill: "#1c1b1a",
                                   outline: "none",
                                 },
+                                focused: {
+                                  fill: isVisited
+                                    ? isSpecial
+                                      ? "#1c1b1a"
+                                      : "#7a7263"
+                                    : "#e3dfd5",
+                                  stroke: "var(--accent-color, #7D7565)",
+                                  strokeWidth: 1.5,
+                                  outline: "none",
+                                }
                               }}
                             />
                           );
@@ -638,12 +723,15 @@ export const Travel: React.FC = () => {
             onClick={() => setSelectedLocation(null)}
           >
             <div
+              ref={modalRef}
               className={styles.modalCard}
               onClick={(e) => e.stopPropagation()}
+              tabIndex={-1}
             >
               <button
                 className={styles.closeButton}
                 onClick={() => setSelectedLocation(null)}
+                aria-label="Close details"
               >
                 <X size={18} />
               </button>
@@ -684,6 +772,7 @@ export const Travel: React.FC = () => {
                                 prev === 0 ? images.length - 1 : prev - 1,
                               )
                             }
+                            aria-label="Previous image"
                           >
                             <ChevronLeft size={20} />
                           </button>
@@ -695,16 +784,19 @@ export const Travel: React.FC = () => {
                                 prev === images.length - 1 ? 0 : prev + 1,
                               )
                             }
+                            aria-label="Next image"
                           >
                             <ChevronRight size={20} />
                           </button>
 
                           <div className={styles.carouselDots}>
                             {images.map((_, idx) => (
-                              <span
+                              <button
                                 key={idx}
+                                type="button"
                                 className={`${styles.carouselDot} ${idx === carouselIndex ? styles.activeDot : ""}`}
                                 onClick={() => setCarouselIndex(idx)}
+                                aria-label={`View image ${idx + 1} of ${images.length}`}
                               />
                             ))}
                           </div>

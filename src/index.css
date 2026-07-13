@@ -118,3 +118,30 @@ img {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-muted);
 }
+
+/* Accessibility & Focus Outlines */
+*:focus-visible {
+  outline: 2px dashed var(--accent-color, #7D7565);
+  outline-offset: 4px;
+}
+
+/* Skip to Main Content Link */
+.skip-to-content {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--accent-color, #7D7565);
+  color: var(--bg-primary, #ffffff);
+  padding: 10px 20px;
+  font-weight: 600;
+  border-radius: 0 0 6px 6px;
+  z-index: 9999;
+  transition: top 0.2s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.skip-to-content:focus-visible {
+  top: 0;
+  outline: none;
+}
