@@ -22,7 +22,7 @@
     "home": false,
     "work": false,
     "projects": false,
-    "travel": false,
+    "travel": true,
     "volunteering": false
   }
 }
