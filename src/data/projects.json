@@ -3,7 +3,7 @@
     "id": "aetherium",
     "title": "Aetherium: Steam & Shadow",
     "subtitle": "Steampunk RTS Battle Game",
-    "description": "Lead the steam-powered Alchemical Empire against the invading Gothic Necromancy Crypt Horde in this premium browser-based real-time strategy (RTS) combat game. Battle for control of central Aether Geysers, research advanced technology upgrade trees, and deploy the colossal Gilded Behemoth to secure your keep.",
+    "description": "Lead the steam-powered Alchemical Empire against the invading Gothic Necromancy Crypt Horde in this browser-based real-time strategy combat game. Battle for control of central Aether Geysers, research advanced technologies, and deploy the colossal Gilded Behemoth to secure your keep and claim victory!",
     "techStack": [
       "HTML5 Canvas",
       "Vanilla CSS3",
@@ -14,7 +14,8 @@
     "githubUrl": "https://github.com/frankhobson/Aetherium",
     "status": "completed",
     "iconName": "Gamepad2",
-    "imageUrl": "aetherium.png"
+    "imageUrl": "aetherium.png",
+    "lastUpdated": "07/2026"
   },
   {
     "id": "wip-project",

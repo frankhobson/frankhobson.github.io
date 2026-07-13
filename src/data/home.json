@@ -4,24 +4,25 @@
   "aboutLabel": "About Me",
   "aboutHeadline": "Quantitative analyst bridging applied mathematics, policy analysis, and operations leadership.",
   "aboutParagraphs": [
-    "I am a quantitative analyst with training in applied mathematics and political science from UCLA. My work focuses on forecasting under uncertainty, building scalable operational systems, and translating complex data into strategic insights for diverse stakeholders.",
-    "With experience spanning climate consulting at Clark Street Associates, international alliance development in Argentina, and large-scale program operations at UCLA, I combine rigorous mathematical modeling with policy analysis. I am passionate about leveraging Python, R, and data systems to solve multi-dimensional challenges."
+    "I am a quantitative analyst with training in applied mathematics and political science from UCLA. My work focuses on forecasting under uncertainty, building scalable operational systems, and translating complex data into strategic insights for diverse stakeholders. I have recently been experimenting extensively with AI agents like Gemini 3.5 Flash and Claude Opus 4.6 in Google Antigravity to build new games and tools to share with the world.",
+    "With experience spanning climate consulting at Clark Street Associates, NGO alliance development in Argentina, and large-scale program operations at UCLA, I combine rigorous mathematical modeling with policy analysis. I am passionate about leveraging  data systems to solve today's challenges, and believe that AI is the power tool to do so quickly and efficiently.",
+    "In my spare time, besides developing new tools to share, I also care for my dog Libby and have recently done several car repairs (engine drive belt replacement, gasket cover replacement, + more) with Dad in the driveway. For sport, I joined Quadball in my third year at UCLA, and I am continuing to play now with the Silicon Valley Vipers!"
   ],
   "metaBasedIn": "Sunnyvale, CA",
   "metaRole": "Looking for work!",
-  "metaSkills": "Python, R, SQL, Excel/Sheets, C++, JavaScript, Spanish",
-  "galleryTravelTitle": "Exploring Global Landscapes",
-  "galleryTravelDescription": "Capturing quiet, beautiful moments from around the world.",
-  "galleryTravelImage": "",
+  "metaSkills": "Antigravity/Codex, Python, R, SQL, Excel/Sheets, C++, JavaScript, Spanish",
+  "galleryTravelTitle": "Exploring The World",
+  "galleryTravelDescription": "Visiting natural landscapes and the Wonders of the World!",
+  "galleryTravelImage": "/images/travel/iguazu 3.png",
   "galleryVolunteeringTitle": "Empowering Communities",
-  "galleryVolunteeringDescription": "Providing educational outreach, global committee leadership, and academic mentoring.",
-  "galleryVolunteeringImage": "",
+  "galleryVolunteeringDescription": "Providing educational outreach and academic mentoring to those less fortunate than I.",
+  "galleryVolunteeringImage": "/images/home/tour.png",
   "heroImage": "/images/home/MachuPicchu.png",
   "blockedTabs": {
     "home": false,
     "work": false,
     "projects": false,
-    "travel": true,
+    "travel": false,
     "volunteering": false
   }
 }
