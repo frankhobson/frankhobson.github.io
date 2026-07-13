@@ -50,7 +50,18 @@ export const Layout: React.FC = () => {
 
   return (
     <div className={styles.wrapper}>
-      <a href="#main-content" className="skip-to-content">
+      <a 
+        href="#main-content" 
+        className="skip-to-content"
+        onClick={(e) => {
+          e.preventDefault();
+          const target = document.getElementById("main-content");
+          if (target) {
+            target.focus();
+            target.scrollIntoView({ behavior: "smooth" });
+          }
+        }}
+      >
         Skip to main content
       </a>
       {/* Navigation Header */}
@@ -165,8 +176,12 @@ export const Layout: React.FC = () => {
         </nav>
       </div>
 
-      {/* Main Content Area */}
-      <main id="main-content" className={styles.mainContent}>
+      <main 
+        id="main-content" 
+        className={styles.mainContent} 
+        tabIndex={-1} 
+        style={{ outline: "none" }}
+      >
         <Outlet />
       </main>
 
