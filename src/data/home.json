@@ -1,0 +1,27 @@
+{
+  "heroName": "Frank Hobson",
+  "heroSubtitle": "Analyzing Systems &middot; Informing Policy &middot; Driving Impact",
+  "aboutLabel": "About Me",
+  "aboutHeadline": "Quantitative analyst bridging applied mathematics, policy analysis, and operations leadership.",
+  "aboutParagraphs": [
+    "I am a quantitative analyst with training in applied mathematics and political science from UCLA. My work focuses on forecasting under uncertainty, building scalable operational systems, and translating complex data into strategic insights for diverse stakeholders.",
+    "With experience spanning climate consulting at Clark Street Associates, international alliance development in Argentina, and large-scale program operations at UCLA, I combine rigorous mathematical modeling with policy analysis. I am passionate about leveraging Python, R, and data systems to solve multi-dimensional challenges."
+  ],
+  "metaBasedIn": "Sunnyvale, CA",
+  "metaRole": "Looking for work!",
+  "metaSkills": "Python, R, SQL, Excel/Sheets, C++, JavaScript, Spanish",
+  "galleryTravelTitle": "Exploring Global Landscapes",
+  "galleryTravelDescription": "Capturing quiet, beautiful moments from around the world.",
+  "galleryTravelImage": "",
+  "galleryVolunteeringTitle": "Empowering Communities",
+  "galleryVolunteeringDescription": "Providing educational outreach, global committee leadership, and academic mentoring.",
+  "galleryVolunteeringImage": "",
+  "heroImage": "/images/home/MachuPicchu.png",
+  "blockedTabs": {
+    "home": false,
+    "work": false,
+    "projects": false,
+    "travel": true,
+    "volunteering": false
+  }
+}

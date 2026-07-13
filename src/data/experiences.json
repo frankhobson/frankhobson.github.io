@@ -1,0 +1,83 @@
+[
+  {
+    "id": "exp-1",
+    "role": "Cub Tours Executive Coordinator",
+    "company": "UCLA Undergraduate Admission",
+    "location": "Los Angeles, CA",
+    "dates": "Mar 2025 - May 2026",
+    "description": [
+      "Lead a large-scale campus tour program serving K–8 students; directly managed 75 volunteers.",
+      "Increased number of guests served by 40% through improved capacity planning.",
+      "Designed a long-range scheduling and registration system extending school registration lead time from 2 weeks to 2 months, reducing no-show rates.",
+      "Built capacity forecasts using four years of historical data to publish conservative availability under uncertainty, releasing ~50% of final capacity in advance.",
+      "Served as primary liaison for over 100 school administrators, principals, and teachers."
+    ],
+    "tags": [
+      "Leadership",
+      "Capacity Planning",
+      "Forecasting",
+      "Operations Management",
+      "Stakeholder Liaison"
+    ],
+    "link": "https://admission.ucla.edu"
+  },
+  {
+    "id": "exp-2",
+    "role": "Strategic and Institutional Alliances Consultant",
+    "company": "YFU Argentina (Youth For Understanding)",
+    "location": "Argentina",
+    "dates": "Jun 2025 - Aug 2025",
+    "description": [
+      "Authored two operational manuals on municipal government alliances and strategic partnerships to support long-term organizational growth.",
+      "Worked in a Spanish-speaking environment; achieved advanced Spanish proficiency."
+    ],
+    "tags": [
+      "Spanish",
+      "Strategic Partnerships",
+      "Operations Manuals",
+      "NGO Consulting",
+      "Policy Writing"
+    ],
+    "link": "https://yfu.org.ar"
+  },
+  {
+    "id": "exp-3",
+    "role": "Cub Tours Training and Recruitment Chair",
+    "company": "UCLA Undergraduate Admission",
+    "location": "Los Angeles, CA",
+    "dates": "Sep 2024 - Jun 2025",
+    "description": [
+      "Redesigned guide training into a hybrid curriculum combining longer workshops with targeted modules, improving instructional coherence and outcomes.",
+      "Developed approximately 6 hours of classroom instruction and 8 hours of tour practice.",
+      "Onboarded 29 new guides in the most demographically diverse cohort since pre-COVID."
+    ],
+    "tags": [
+      "Training Design",
+      "Recruitment",
+      "Curriculum Development",
+      "Diversity & Inclusion"
+    ],
+    "link": "https://admission.ucla.edu"
+  },
+  {
+    "id": "exp-4",
+    "role": "Summer Analyst",
+    "company": "Clark Street Associates (Climate & Technology)",
+    "location": "Sunnyvale, CA",
+    "dates": "Summers 2023 & 2024",
+    "description": [
+      "Conducted research for clients in clean materials, EV charging, quantum computing, and domestic manufacturing.",
+      "Authored a white paper for congressional audiences on the strategic importance of quantum computing investment.",
+      "Developed a GHG-emissions framework categorizing impacts across manufacturing stages.",
+      "Supported climate-focused clients by identifying federal grant opportunities and tax credits."
+    ],
+    "tags": [
+      "Research",
+      "Climate Tech",
+      "GHG Emissions",
+      "Policy Writing",
+      "Data Analysis"
+    ],
+    "link": "https://www.clarkstreetassociates.com"
+  }
+]

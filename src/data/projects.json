@@ -1,0 +1,36 @@
+[
+  {
+    "id": "aetherium",
+    "title": "Aetherium: Steam & Shadow",
+    "subtitle": "Steampunk RTS Battle Game",
+    "description": "Lead the steam-powered Alchemical Empire against the invading Gothic Necromancy Crypt Horde in this premium browser-based real-time strategy (RTS) combat game. Battle for control of central Aether Geysers, research advanced technology upgrade trees, and deploy the colossal Gilded Behemoth to secure your keep.",
+    "techStack": [
+      "HTML5 Canvas",
+      "Vanilla CSS3",
+      "Vanilla Javascript",
+      "Web Audio API"
+    ],
+    "link": "https://frankhobson.github.io/Aetherium/",
+    "githubUrl": "https://github.com/frankhobson/Aetherium",
+    "status": "completed",
+    "iconName": "Gamepad2",
+    "imageUrl": "aetherium.png"
+  },
+  {
+    "id": "wip-project",
+    "title": "Global Elections Model",
+    "subtitle": "A correlation study between global events and election results",
+    "description": "This elections research project aims to predict election results based off of prevailing global patterns rather than race-specific polling. The project uses the Global Database of Events, Language, and Tone, but does not include any specifics on candidate quality or even the political leaning of different parties. Instead, the model hopes to predict when people want a change in their national government. Currently, the model sits around 70% accuracy.",
+    "techStack": [
+      "React 19",
+      "Vite",
+      "TypeScript",
+      "Lucide Icons",
+      "CSS Modules",
+      "Streamlit"
+    ],
+    "status": "wip",
+    "iconName": "Globe",
+    "imageUrl": "/images/projects/election.png"
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "id": "vol-1",
+    "role": "Cub Tours Guide",
+    "organization": "UCLA Undergraduate Admission",
+    "dates": "Nov 2022 - May 2026",
+    "description": "Provided 66 UCLA campus tours to 1,400+ K-8 students to foster interest in higher education.",
+    "achievements": [
+      "Conducted 66 comprehensive tours highlighting academic opportunities, student life, and campus history.",
+      "Presented to audiences of up to 40 guests per tour, tailoring messaging to K-8 students and parents.",
+      "Fostered early interest in higher education for over 1,400 students from diverse school districts."
+    ],
+    "featured": true,
+    "iconName": "custom",
+    "image": "/images/volunteering/Cub Tours Profile.png",
+    "link": "https://admission.ucla.edu",
+    "logoUrl": "/images/logos/admission.ucla.edu.png"
+  },
+  {
+    "id": "vol-2",
+    "role": "Head Chair (IMO Committee)",
+    "organization": "Model United Nations",
+    "dates": "2016 - 2025",
+    "description": "Led large-scale simulations and authored detailed background guides on maritime security and autonomous ships.",
+    "achievements": [
+      "Served as Head Chair for a 150-delegate International Maritime Organization committee.",
+      "Authored a 30-page background guide on Maritime Autonomous Surface Ships and maritime security.",
+      "Trained and supervised three dais members to facilitate debate and resolution drafting."
+    ],
+    "featured": false,
+    "iconName": "custom",
+    "link": "https://www.un.org",
+    "logoUrl": "/images/logos/un.org.png"
+  },
+  {
+    "id": "vol-3",
+    "role": "Math Tutor",
+    "organization": "Learn in Shelter",
+    "dates": "Apr 2020 - Jun 2022",
+    "description": "Provided weekly one-on-one math tutoring to elementary school students during remote learning.",
+    "achievements": [
+      "Provided weekly one-on-one math tutoring to an elementary school student over two years.",
+      "Designed targeted arithmetic and problem-solving exercises to keep students engaged.",
+      "Helped close remote learning gaps and improve student confidence in mathematics."
+    ],
+    "featured": false,
+    "iconName": "custom",
+    "link": "https://www.linkedin.com/company/learninshelter/",
+    "logoUrl": "/images/logos/LearnInShelter.png"
+  }
+]

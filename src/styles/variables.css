@@ -1,0 +1,40 @@
+/* Minimalist Light Mode Theme Variables */
+:root {
+  /* Colors */
+  --bg-primary: #FAF9F6;       /* Warm off-white */
+  --bg-secondary: #F5F4F0;     /* Slightly darker warm tone */
+  --bg-tertiary: #EAE6DF;      /* Sand color for subtle highlights */
+  --text-primary: #1C1B1A;     /* Soft black/charcoal */
+  --text-secondary: #595958;   /* Muted dark gray */
+  --text-muted: #8C8A84;       /* Lighter gray for dates and inactive states */
+  --accent-color: #7D7565;     /* Warm taupe */
+  --accent-light: #EAE6DF;     /* Soft sand border/hover */
+  --border-color: #E2DDD5;     /* Soft line divider */
+  --selection-bg: #EAE6DF;
+  --selection-color: #1C1B1A;
+
+  /* Typography */
+  --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Layout & Spacing */
+  --max-width: 1100px;
+  --header-height: 80px;
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+  --spacing-xxl: 8rem;
+
+  /* Shadows & Borders */
+  --border-radius: 4px;        /* Sharp, clean, minimalist edges */
+  --border-radius-lg: 8px;
+  --shadow-sm: 0 2px 4px rgba(28, 27, 26, 0.03);
+  --shadow-md: 0 4px 12px rgba(28, 27, 26, 0.05);
+  
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
