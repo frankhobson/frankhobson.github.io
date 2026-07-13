@@ -68,8 +68,8 @@ export const Projects: React.FC = () => {
                     {renderProjectIcon(project)}
                   </div>
                   <div className={styles.headerText}>
-                    <h3 className={styles.projectTitle}>{project.title}</h3>
-                    <h4 className={styles.projectSubtitle}>{project.subtitle}</h4>
+                    <h2 className={styles.projectTitle}>{project.title}</h2>
+                    <h3 className={styles.projectSubtitle}>{project.subtitle}</h3>
                   </div>
                 </div>
 

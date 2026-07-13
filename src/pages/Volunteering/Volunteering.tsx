@@ -123,8 +123,8 @@ export const Volunteering: React.FC = () => {
                   <span className={styles.cardDates}>{role.dates}</span>
                 </div>
                 
-                <h3 className={styles.cardRole}>{role.role}</h3>
-                <h4 className={styles.cardOrg}>{role.organization}</h4>
+                <h2 className={styles.cardRole}>{role.role}</h2>
+                <h3 className={styles.cardOrg}>{role.organization}</h3>
                 
                 <p className={styles.cardDesc}>{role.description}</p>
 

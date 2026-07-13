@@ -49,8 +49,8 @@ export const Work: React.FC = () => {
                       <Calendar size={12} />
                       {exp.dates}
                     </span>
-                    <h3 className={styles.role}>{exp.role}</h3>
-                    <h4 className={styles.company}>
+                    <h2 className={styles.role}>{exp.role}</h2>
+                    <h3 className={styles.company}>
                       {exp.company}
                       {exp.link && (
                         <a 
@@ -64,7 +64,7 @@ export const Work: React.FC = () => {
                           <ExternalLink size={12} />
                         </a>
                       )}
-                    </h4>
+                    </h3>
                   </div>
                   
                   <div className={styles.location}>
