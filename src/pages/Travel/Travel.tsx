@@ -243,7 +243,7 @@ export const Travel: React.FC = () => {
   }, [selectedLocation]);
 
   useEffect(() => {
-    document.title = "Travel Log | Frank Hobson";
+    document.title = "Travel | Frank Hobson";
   }, []);
 
   // Load World Map on mount
