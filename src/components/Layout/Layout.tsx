@@ -50,8 +50,8 @@ export const Layout: React.FC = () => {
 
   return (
     <div className={styles.wrapper}>
-      <a 
-        href="#main-content" 
+      <a
+        href="#main-content"
         className="skip-to-content"
         onClick={(e) => {
           e.preventDefault();
@@ -176,10 +176,10 @@ export const Layout: React.FC = () => {
         </nav>
       </div>
 
-      <main 
-        id="main-content" 
-        className={styles.mainContent} 
-        tabIndex={-1} 
+      <main
+        id="main-content"
+        className={styles.mainContent}
+        tabIndex={-1}
         style={{ outline: "none" }}
       >
         <Outlet />
@@ -193,7 +193,7 @@ export const Layout: React.FC = () => {
           </p>
           <div className={styles.footerLinks}>
             <a
-              href="https://github.com/fhobson4"
+              href="https://github.com/frankhobson"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.footerLink}
