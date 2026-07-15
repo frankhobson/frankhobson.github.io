@@ -18,20 +18,23 @@
     "lastUpdated": "07/2026"
   },
   {
-    "id": "wip-project",
+    "id": "elections",
     "title": "Global Elections Model",
     "subtitle": "A correlation study between global events and election results",
     "description": "This elections research project aims to predict election results based off of prevailing global patterns rather than race-specific polling. The project uses the Global Database of Events, Language, and Tone, but does not include any specifics on candidate quality or even the political leaning of different parties. Instead, the model hopes to predict when people want a change in their national government. Currently, the model sits around 70% accuracy.",
     "techStack": [
-      "React 19",
-      "Vite",
-      "TypeScript",
-      "Lucide Icons",
-      "CSS Modules",
-      "Streamlit"
+      "Python",
+      "Streamlit",
+      "Machine Learning",
+      "GDELT API",
+      "V-Dem Database",
+      "Predictive Modeling"
     ],
-    "status": "wip",
+    "link": "https://frankhobson.github.io/elections/",
+    "githubUrl": "https://github.com/frankhobson/elections",
+    "status": "completed",
     "iconName": "Globe",
-    "imageUrl": "/images/projects/election.png"
+    "imageUrl": "election.png",
+    "lastUpdated": "07/2026"
   }
 ]
