@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowDown, ArrowRight } from "lucide-react";
+import { ArrowDown, ArrowRight, Award, ExternalLink } from "lucide-react";
 import styles from "./Home.module.css";
 import { home } from "../../data/mockData";
 import { useLocalStorageState } from "../../hooks/useLocalStorageState";
@@ -81,6 +81,36 @@ export const Home: React.FC = () => {
                 <span className={styles.metaLabel}>Skills</span>
                 <span className={styles.metaValue}>{homeData.metaSkills}</span>
               </div>
+              {homeData.certifications && homeData.certifications.length > 0 && (
+                <div className={styles.metaRow}>
+                  <span className={styles.metaLabel}>Certifications</span>
+                  <div className={styles.certsContainer}>
+                    {homeData.certifications.map((cert) => (
+                      <div key={cert.id} className={styles.certItem}>
+                        <Award size={14} className={styles.certIcon} />
+                        <div className={styles.certDetails}>
+                          {cert.link ? (
+                            <a
+                              href={cert.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={styles.certNameLink}
+                              aria-label={`Verify ${cert.name} certification issued by ${cert.issuer}`}
+                            >
+                              {cert.name} <ExternalLink size={10} style={{ marginLeft: "2px" }} />
+                            </a>
+                          ) : (
+                            <span className={styles.certName}>{cert.name}</span>
+                          )}
+                          <span className={styles.certMeta}>
+                            {cert.issuer} &middot; {cert.date}
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>

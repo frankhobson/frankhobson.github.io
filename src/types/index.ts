@@ -36,6 +36,15 @@ export interface TravelLocation {
   stateCode?: string;         // E.g., 'US-CA', 'AU-NSW' for drill-down mapping
 }
 
+export interface Certification {
+  id: string;
+  name: string;
+  issuer: string;
+  date: string;
+  credentialId?: string;
+  link?: string;
+}
+
 export interface HomeData {
   heroName: string;
   heroSubtitle: string;
@@ -59,6 +68,7 @@ export interface HomeData {
     travel?: boolean;
     volunteering?: boolean;
   };
+  certifications?: Certification[];
 }
 
 export interface Project {

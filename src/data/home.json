@@ -24,5 +24,47 @@
     "projects": false,
     "travel": true,
     "volunteering": false
-  }
+  },
+  "certifications": [
+    {
+      "id": "hipaa",
+      "name": "HIPAA for Healthcare Workers",
+      "issuer": "HIPAA Exams",
+      "date": "Issued Jul 2026 · Expires Jul 2027",
+      "credentialId": "42504157",
+      "link": "https://verify.360training.com/qrcode-certificate-validation?enrollmentId=42504157&s_fname=Frank&s_mname=&s_lname=Hobson&course=HIPAA+for+Healthcare+Workers&issued=07/16/2026"
+    },
+    {
+      "id": "padi",
+      "name": "Open Water Diver",
+      "issuer": "PADI",
+      "date": "Issued Dec 2017",
+      "credentialId": "",
+      "link": ""
+    },
+    {
+      "id": "sailing",
+      "name": "Sailing Level 1",
+      "issuer": "US Sailing",
+      "date": "Issued Jun 2021",
+      "credentialId": "",
+      "link": ""
+    },
+    {
+      "id": "boater",
+      "name": "California Boater Card",
+      "issuer": "Boating and Waterways, CA Dept. of",
+      "date": "Issued Apr 2021",
+      "credentialId": "BA89125556",
+      "link": ""
+    },
+    {
+      "id": "first-aid",
+      "name": "CPR/AED/First Aid (Expired)",
+      "issuer": "American Red Cross",
+      "date": "Issued Jun 2024 · Expired Jun 2026",
+      "credentialId": "01ITF6D",
+      "link": "https://www.redcross.org/take-a-class/qrcode?certnumber=01ITF6D"
+    }
+  ]
 }
