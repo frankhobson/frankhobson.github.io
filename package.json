@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "predev": "node scripts/fetch-logos.js",
-    "prebuild": "node scripts/fetch-logos.js",
+    "predev": "node scripts/fetch-logos.js && node scripts/generate-ai-files.js",
+    "prebuild": "node scripts/fetch-logos.js && node scripts/generate-ai-files.js",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
