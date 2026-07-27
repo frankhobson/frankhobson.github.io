@@ -8,6 +8,7 @@
     "prebuild": "node scripts/fetch-logos.js && node scripts/generate-ai-files.js",
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "postbuild": "node scripts/generate-ai-files.js",
     "lint": "oxlint",
     "preview": "vite preview"
   },

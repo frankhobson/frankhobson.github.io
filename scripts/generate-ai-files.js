@@ -8,6 +8,7 @@ const __dirname = path.dirname(__filename);
 const run = () => {
   const rootDir = path.join(__dirname, '..');
   const publicDir = path.join(rootDir, 'public');
+  const distDir = path.join(rootDir, 'dist');
   const srcDataDir = path.join(rootDir, 'src/data');
 
   if (!fs.existsSync(publicDir)) {
@@ -84,7 +85,35 @@ Sitemap: https://frankhobson.github.io/sitemap.xml
   fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), sitemapXml);
   console.log('Generated public/sitemap.xml');
 
-  // 3. Generate llms.txt & llms-full.txt
+  // 3. Generate public/404.html (GitHub Pages SPA router fallback)
+  const html404 = `<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Portfolio | Frank Hobson</title>
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages SPA Routing
+      // Converts requested path e.g. /projects into a query parameter redirect /?/projects
+      var pathSegmentsToKeep = 0;
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to requested route...</p>
+  </body>
+</html>
+`;
+  fs.writeFileSync(path.join(publicDir, '404.html'), html404);
+  console.log('Generated public/404.html');
+
+  // 4. Generate llms.txt & llms-full.txt
   const markdownContent = `# Frank Hobson — Portfolio & Professional Background
 
 > ${homeData.heroSubtitle.replace(/&middot;/g, '·')}
@@ -165,9 +194,28 @@ ${v.achievements.map(a => `- ${a}`).join('\n')}
   fs.writeFileSync(path.join(publicDir, 'llms-full.txt'), markdownContent);
   console.log('Generated public/llms.txt and public/llms-full.txt');
 
-  // 4. Update index.html pre-rendered static content fallback and JSON-LD schema
+  // 5. Update index.html pre-rendered static content fallback, GitHub Pages SPA decoder, and JSON-LD schema
   const indexPath = path.join(rootDir, 'index.html');
   let html = fs.readFileSync(indexPath, 'utf8');
+
+  // GitHub Pages SPA Redirect Decoder
+  const spaRedirectDecoder = `<script type="text/javascript">
+      // GitHub Pages SPA Route Decoder
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>`;
+
+  if (!html.includes('GitHub Pages SPA Route Decoder')) {
+    html = html.replace('</head>', `    ${spaRedirectDecoder}\n  </head>`);
+  }
 
   // Build JSON-LD Schema
   const jsonLdSchema = {
@@ -305,7 +353,28 @@ ${v.achievements.map(a => `- ${a}`).join('\n')}
   html = html.replace(/<div id="root">[\s\S]*?<\/div>\s*<script type="module"/, `${staticRootHtml}\n    <script type="module"`);
 
   fs.writeFileSync(indexPath, html);
-  console.log('Updated index.html with static pre-rendered fallback HTML and JSON-LD schema');
+  console.log('Updated index.html with static pre-rendered fallback HTML, SPA decoder, and JSON-LD schema');
+
+  // 6. Generate dist/ route copies if dist/ directory exists (post-build helper)
+  if (fs.existsSync(distDir)) {
+    const distIndexPath = path.join(distDir, 'index.html');
+    if (fs.existsSync(distIndexPath)) {
+      const routes = ['work', 'projects', 'travel', 'volunteering', 'admin'];
+      const distIndexHtml = fs.readFileSync(distIndexPath, 'utf8');
+
+      // Copy 404.html into dist
+      fs.writeFileSync(path.join(distDir, '404.html'), html404);
+
+      routes.forEach(route => {
+        const routeFolder = path.join(distDir, route);
+        if (!fs.existsSync(routeFolder)) {
+          fs.mkdirSync(routeFolder, { recursive: true });
+        }
+        fs.writeFileSync(path.join(routeFolder, 'index.html'), distIndexHtml);
+      });
+      console.log(`Generated dist/ route copies for: ${routes.join(', ')}`);
+    }
+  }
 };
 
 run();
