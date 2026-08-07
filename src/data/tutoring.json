@@ -1,0 +1,114 @@
+{
+  "heroTitle": "Private Math Tutoring",
+  "heroSubtitle": "Personalized 1-on-1 mathematics instruction spanning middle school, high school, and undergraduate coursework.",
+  "aboutHeading": "Meet Your Tutor",
+  "aboutPhilosophy": "My goal as a tutor is not simply to help students solve today's homework problems, but to develop the confidence and understanding they need to succeed independently. I believe that true mastery comes when a student can explain a concept clearly to someone else, so I use guiding questions to help students reason through problems rather than simply showing them the answer. Each session begins with a check for understanding to identify strengths and shortcomings, followed by targeted instruction and guided practice. As students grow more comfortable, I encourage them to walk me through their thinking until they can confidently explain the material as if they were teaching a classmate. This emphasis on deep conceptual understanding helps students build confidence, and that confidence creates a positive cycle: they engage more fully with challenging material, perform better academically, and become increasingly willing to tackle new problems on their own.",
+  "stats": [
+    {
+      "id": "stat-1",
+      "topLabel": "Education",
+      "bigStat": "UCLA",
+      "subtext": "3.79 GPA"
+    },
+    {
+      "id": "stat-2",
+      "topLabel": "Experience",
+      "bigStat": "2",
+      "subtext": "Years Tutoring"
+    },
+    {
+      "id": "stat-3",
+      "topLabel": "Grades",
+      "bigStat": "6–12",
+      "subtext": "and some college!"
+    }
+  ],
+  "subjectCategories": [
+    {
+      "id": "cat-1",
+      "title": "Middle School Math",
+      "gradeRange": "Grades 6–8",
+      "subjects": [
+        "Math Foundations",
+        "Pre-Algebra",
+        "Algebra 1 (Integrated Math 1)",
+        "Geometry (Integrated Math 2)"
+      ]
+    },
+    {
+      "id": "cat-2",
+      "title": "High School Math",
+      "gradeRange": "Grades 9–12",
+      "subjects": [
+        "Algebra 2/Trigonometry (Integrated Math 3)",
+        "Precalculus",
+        "AP Calculus AB (Calc 1)",
+        "AP Calculus BC (Calc 2)"
+      ]
+    },
+    {
+      "id": "cat-3",
+      "title": "Undergraduate Math",
+      "gradeRange": "Grades 13–14",
+      "subjects": [
+        "Multivariable Calculus (Calc 3)",
+        "Linear Algebra",
+        "Differential Equations"
+      ]
+    }
+  ],
+  "rates": {
+    "onlineRate": "$70 / hr",
+    "onlineDescription": "Online via Zoom, utilizing Zoom Whiteboard and online graphic calculators for the best experience!",
+    "inPersonRate": "$80 / hr",
+    "inPersonDescription": "Anywhere in the South Bay area as far north as Redwood City and Fremont (libraries, coffee shops, or home visits).",
+    "referralOffer": "First 60-minute session free for new students referred by an existing client!"
+  },
+  "googleFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLSeVEwNahKxlUtBSBCC1MVW7hYRolzUhem1axmkRoot69RVNiw/viewform?embedded=true",
+  "faqs": [
+    {
+      "id": "faq-1786140119584",
+      "question": "What is the first session like?",
+      "answer": "During the first session, my goal is to understand the student and parents’ goals for tutoring while establishing a baseline of the student’s current understanding. After introductions, we will get straight into the math by working through current assignments or concepts the student is finding challenging. As we work, I’ll ask questions and observe the student’s reasoning to identify strengths, gaps, and areas where additional support may be helpful. Between the first and second sessions, I’ll review the relevant course material so I can anticipate what the student will be learning next and make sure our future sessions address both immediate needs and the underlying concepts."
+    },
+    {
+      "id": "faq-5",
+      "question": "What is your scheduling and cancellation policy?",
+      "answer": "Sessions are scheduled at a recurring weekly time slot. I am currently only doing 60-minute sessions, but if you would like a longer session, I am open to it.\nI request that you inform me by 9 PM the night before a scheduled session if you need to cancel or reschedule. Changes made after 9 PM the night before will be charged the full session fee."
+    },
+    {
+      "id": "faq-1",
+      "question": "What technology is required for online tutoring sessions?",
+      "answer": "Online sessions take place over Zoom. Students only need a computer or tablet with a stable internet connection and microphone. I use Zoom's integrated interactive whiteboard so the student and I can write and work through math problems together on screen."
+    },
+    {
+      "id": "faq-2",
+      "question": "Where do in-person tutoring sessions take place?",
+      "answer": "In-person tutoring is available across the South Bay area as far north as Redwood City/Belmont and Fremont. Sessions can be held at local public libraries, coffee shops, university study spaces, or in-home."
+    },
+    {
+      "id": "faq-1786136592054",
+      "question": "My student is ahead of their class. How will you help them further their mathematical knowledge?",
+      "answer": "I work with students where they're at. I am more than happy to teach content up through what I learned in my Bachelor's degree if your student is understanding and retaining the material. Each week, I'll check their understanding of what they're learning in school, and if they already have a strong grasp of it, we will swiftly move onto something they don't already know."
+    },
+    {
+      "id": "faq-3",
+      "question": "How does the referral program and free session work?",
+      "answer": "When an existing client refers a new student who schedules a session, the new student receives their first 60-minute session completely free! Simply mention the referring client's name on the inquiry form."
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "test-1",
+      "quote": "Placeholder you're awesome text.",
+      "author": "Elementary school parent",
+      "context": "3-5th grade math"
+    },
+    {
+      "id": "test-2",
+      "quote": "Placeholder you're awesome text.",
+      "author": "University Student",
+      "context": "Political Game Theory"
+    }
+  ]
+}

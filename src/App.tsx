@@ -7,6 +7,7 @@ import { Work } from './pages/Work/Work';
 import { Travel } from './pages/Travel/Travel';
 import { Volunteering } from './pages/Volunteering/Volunteering';
 import { Projects } from './pages/Projects/Projects';
+import { Tutoring } from './pages/Tutoring/Tutoring';
 import { Admin } from '@admin-page';
 import { UnderDevelopment } from './components/UnderDevelopment/UnderDevelopment';
 import { useLocalStorageState } from './hooks/useLocalStorageState';
@@ -14,7 +15,7 @@ import { home } from './data/mockData';
 import type { HomeData } from './types';
 
 interface BlockedRouteProps {
-  tabName: 'home' | 'work' | 'projects' | 'travel' | 'volunteering';
+  tabName: 'home' | 'work' | 'projects' | 'travel' | 'volunteering' | 'tutoring';
   element: React.ReactElement;
 }
 
@@ -50,6 +51,7 @@ export const App: React.FC = () => {
           <Route path="projects" element={<BlockedRoute tabName="projects" element={<Projects />} />} />
           <Route path="travel" element={<BlockedRoute tabName="travel" element={<Travel />} />} />
           <Route path="volunteering" element={<BlockedRoute tabName="volunteering" element={<Volunteering />} />} />
+          <Route path="tutoring" element={<BlockedRoute tabName="tutoring" element={<Tutoring />} />} />
           {(import.meta.env.DEV || window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") && (
             <Route path="admin" element={<Admin />} />
           )}

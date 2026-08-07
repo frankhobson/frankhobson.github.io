@@ -80,6 +80,12 @@ Sitemap: https://frankhobson.github.io/sitemap.xml
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://frankhobson.github.io/tutoring</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>
 `;
   fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), sitemapXml);
@@ -359,7 +365,7 @@ ${v.achievements.map(a => `- ${a}`).join('\n')}
   if (fs.existsSync(distDir)) {
     const distIndexPath = path.join(distDir, 'index.html');
     if (fs.existsSync(distIndexPath)) {
-      const routes = ['work', 'projects', 'travel', 'volunteering', 'admin'];
+      const routes = ['work', 'projects', 'travel', 'volunteering', 'tutoring', 'admin'];
       const distIndexHtml = fs.readFileSync(distIndexPath, 'utf8');
 
       // Copy 404.html into dist

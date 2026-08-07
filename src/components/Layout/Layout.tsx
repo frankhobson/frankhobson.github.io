@@ -115,6 +115,14 @@ export const Layout: React.FC = () => {
             >
               Volunteering
             </NavLink>
+            <NavLink
+              to="/tutoring"
+              className={({ isActive }) =>
+                `${styles.navLink} ${isActive ? styles.activeLink : ""}`
+              }
+            >
+              Tutoring
+            </NavLink>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -172,6 +180,14 @@ export const Layout: React.FC = () => {
             }
           >
             Volunteering
+          </NavLink>
+          <NavLink
+            to="/tutoring"
+            className={({ isActive }) =>
+              `${styles.mobileLink} ${isActive ? styles.activeMobileLink : ""}`
+            }
+          >
+            Tutoring
           </NavLink>
         </nav>
       </div>

@@ -67,8 +67,57 @@ export interface HomeData {
     projects?: boolean;
     travel?: boolean;
     volunteering?: boolean;
+    tutoring?: boolean;
   };
   certifications?: Certification[];
+}
+
+export interface TutoringStat {
+  id: string;
+  topLabel: string;
+  bigStat: string;
+  subtext: string;
+}
+
+export interface TutoringSubjectCategory {
+  id: string;
+  title: string;
+  gradeRange: string;
+  subjects: string[];
+}
+
+export interface TutoringRates {
+  onlineRate: string;
+  onlineDescription: string;
+  inPersonRate: string;
+  inPersonDescription: string;
+  referralOffer: string;
+}
+
+export interface TutoringFAQ {
+  id: string;
+  question: string;
+  answer: string;
+}
+
+export interface TutoringTestimonial {
+  id: string;
+  quote: string;
+  author: string;
+  context: string;
+}
+
+export interface TutoringData {
+  heroTitle: string;
+  heroSubtitle: string;
+  aboutHeading: string;
+  aboutPhilosophy: string;
+  stats: TutoringStat[];
+  subjectCategories: TutoringSubjectCategory[];
+  rates: TutoringRates;
+  googleFormUrl: string;
+  faqs: TutoringFAQ[];
+  testimonials: TutoringTestimonial[];
 }
 
 export interface Project {

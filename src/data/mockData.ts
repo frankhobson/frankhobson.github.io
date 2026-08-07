@@ -1,9 +1,10 @@
-import type { Experience, Volunteering, TravelLocation, HomeData, Project } from '../types';
+import type { Experience, Volunteering, TravelLocation, HomeData, Project, TutoringData } from '../types';
 import experiencesData from './experiences.json';
 import volunteeringData from './volunteering.json';
 import travelData from './travel.json';
 import homeData from './home.json';
 import projectsData from './projects.json';
+import tutoringDataJson from './tutoring.json';
 
 // Helper to load data from localStorage or fallback to static JSON
 const loadLocalData = <T>(key: string, fallback: T): T => {
@@ -32,3 +33,4 @@ export const travelLocations: TravelLocation[] = rawTravelLocations.map(loc => {
 });
 export const home: HomeData = loadLocalData('portfolio_home', homeData as HomeData);
 export const projects: Project[] = loadLocalData('portfolio_projects', projectsData as Project[]);
+export const tutoring: TutoringData = loadLocalData('portfolio_tutoring', tutoringDataJson as TutoringData);
