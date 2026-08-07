@@ -365,7 +365,34 @@ ${v.achievements.map(a => `- ${a}`).join('\n')}
   if (fs.existsSync(distDir)) {
     const distIndexPath = path.join(distDir, 'index.html');
     if (fs.existsSync(distIndexPath)) {
-      const routes = ['work', 'projects', 'travel', 'volunteering', 'tutoring', 'admin'];
+      const ROUTE_META = {
+        work: {
+          title: "Work Experience | Frank Hobson",
+          description: "Professional software engineering, quantitative systems analysis, and research experience of Frank Hobson."
+        },
+        projects: {
+          title: "Projects | Frank Hobson",
+          description: "Featured software, game development, and mathematical modeling projects by Frank Hobson."
+        },
+        travel: {
+          title: "Travel | Frank Hobson",
+          description: "Interactive travel map and trip highlights across 23 countries and 37 US states."
+        },
+        volunteering: {
+          title: "Volunteering & Leadership | Frank Hobson",
+          description: "Community involvement, coaching, and volunteer leadership activities of Frank Hobson."
+        },
+        tutoring: {
+          title: "Tutoring | Frank Hobson",
+          description: "Personalized 1-on-1 private mathematics instruction spanning middle school, high school, and undergraduate coursework by UCLA graduate Frank Hobson."
+        },
+        admin: {
+          title: "Admin Dashboard | Frank Hobson",
+          description: "Local administration and content management dashboard."
+        }
+      };
+
+      const routes = Object.keys(ROUTE_META);
       const distIndexHtml = fs.readFileSync(distIndexPath, 'utf8');
 
       // Copy 404.html into dist
@@ -376,9 +403,18 @@ ${v.achievements.map(a => `- ${a}`).join('\n')}
         if (!fs.existsSync(routeFolder)) {
           fs.mkdirSync(routeFolder, { recursive: true });
         }
-        fs.writeFileSync(path.join(routeFolder, 'index.html'), distIndexHtml);
+        const meta = ROUTE_META[route] || { title: "Frank Hobson", description: "Personal Website of Frank Hobson" };
+        let routeHtml = distIndexHtml
+          .replace(/<title>[\s\S]*?<\/title>/, `<title>${meta.title}</title>`)
+          .replace(/<meta property="og:title" content="[\s\S]*?" \/>/, `<meta property="og:title" content="${meta.title}" />`)
+          .replace(/<meta property="twitter:title" content="[\s\S]*?" \/>/, `<meta property="twitter:title" content="${meta.title}" />`)
+          .replace(/<meta name="description" content="[\s\S]*?" \/>/, `<meta name="description" content="${meta.description}" />`)
+          .replace(/<meta property="og:description" content="[\s\S]*?" \/>/, `<meta property="og:description" content="${meta.description}" />`)
+          .replace(/<meta property="twitter:description" content="[\s\S]*?" \/>/, `<meta property="twitter:description" content="${meta.description}" />`);
+
+        fs.writeFileSync(path.join(routeFolder, 'index.html'), routeHtml);
       });
-      console.log(`Generated dist/ route copies for: ${routes.join(', ')}`);
+      console.log(`Generated dist/ route copies with custom titles & link preview metadata for: ${routes.join(', ')}`);
     }
   }
 };
